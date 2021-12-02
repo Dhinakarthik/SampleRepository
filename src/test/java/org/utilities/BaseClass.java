@@ -20,6 +20,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -28,6 +29,7 @@ public class BaseClass {
 
 	public static Actions a;
 	public static TakesScreenshot tk;
+	public static Select s;
 
 	public static void launchChrome() {
 
@@ -175,50 +177,73 @@ public class BaseClass {
 		FileUtils.copyFile(src, des);
 
 	}
-	public static String userInput(int rowNumber,int cellNumber) throws IOException {
-	File f = new File("C:\\Users\\ELCOT\\eclipse-workspace\\SeleniumMven\\testData\\Book2.xlsx");
-		
-		FileInputStream fin = new FileInputStream(f);
-	
-		Workbook w = new XSSFWorkbook(fin);
-		
-		Sheet s = w.getSheet("Sheet1");
-		
-		Row r = s.getRow(rowNumber);
-		
-		Cell c = r.getCell(cellNumber);
-		
-	    int cellType = c.getCellType();
-		String value ="";
-		if (cellType==1) {
-			
-			 value = c.getStringCellValue();
-			
 
-   	}else if (cellType==0) {
-			
+	public static String userInput(int rowNumber, int cellNumber) throws IOException {
+		File f = new File("C:\\Users\\ELCOT\\eclipse-workspace\\SeleniumMven\\testData\\testQa.xlsx");
+
+		FileInputStream fin = new FileInputStream(f);
+
+		Workbook w = new XSSFWorkbook(fin);
+
+		Sheet s = w.getSheet("Sheet1");
+
+		Row r = s.getRow(rowNumber);
+
+		Cell c = r.getCell(cellNumber);
+
+		int cellType = c.getCellType();
+		String value = "";
+		if (cellType == 1) {
+
+			value = c.getStringCellValue();
+
+		} else if (cellType == 0) {
+
 			if (DateUtil.isCellDateFormatted(c)) {
-				
+
 				Date date = c.getDateCellValue();
-				
+
 				SimpleDateFormat sim = new SimpleDateFormat("dd, MMM, yyyy");
-				
-				 value = sim.format(date);
-				
-				
-				
-				
-			}else {
+
+				value = sim.format(date);
+
+			} else {
 				double d = c.getNumericCellValue();
-				
-				long l=(long)d;
-				
-				 value = String.valueOf(l);
+
+				long l = (long) d;
+
+				value = String.valueOf(l);
 			}
-			
-			
-			
+
 		}
-	    return value ;
+		return value;
+	}
+
+	public static void selectValue(WebElement ele, String value) {
+
+		s = new Select(ele);
+
+		s.selectByValue(value);
+
+	}
+
+	public static void selectIndex(WebElement ele, int value) {
+
+		s = new Select(ele);
+
+		s.selectByIndex(value);
+
+	}
+
+	public static void selectVisibleText(WebElement ele, String value) {
+
+		s = new Select(ele);
+
+		s.selectByVisibleText(value);
+
+	}
+	private void dhina() {
+		System.out.println("Dhinakaran");
+
 	}
 }

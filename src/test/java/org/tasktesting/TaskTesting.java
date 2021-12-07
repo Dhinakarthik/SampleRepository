@@ -1,32 +1,11 @@
 package org.tasktesting;
 
-import java.io.IOException;
+public class TaskTesting {
 
-import org.pom.DemoQaRegisterPagePojo;
-import org.pom.FbLoginPagePojo;
-import org.utilities.BaseClass;
+	private void gitTest() {
 
-
-public class TaskTesting extends BaseClass {
-	
-	public static void main(String[] args) throws IOException {
-		
-		launchChrome();
-		launchUrl("http://www.adactin.com/HotelApp/");
-		max();
-		
-		
-		
-		
-		
-		
-		
-		
-	
-		
-	}
-
-	
+		System.out.println("yuva enter value");
 
 	}
 
+}

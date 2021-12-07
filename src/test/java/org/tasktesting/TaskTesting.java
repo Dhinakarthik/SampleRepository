@@ -8,4 +8,18 @@ public class TaskTesting {
 
 	}
 
+
+public class TaskTesting1   {
+	
+	private void gitTest() {
+		
+		System.out.println("hari entered value");
+
+	}
+	
+	
+	
+		
+	}
 }
+

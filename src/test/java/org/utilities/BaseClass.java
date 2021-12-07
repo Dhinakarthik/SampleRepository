@@ -14,6 +14,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -30,6 +31,7 @@ public class BaseClass {
 	public static Actions a;
 	public static TakesScreenshot tk;
 	public static Select s;
+	public static JavascriptExecutor js;
 
 	public static void launchChrome() {
 
@@ -179,7 +181,7 @@ public class BaseClass {
 	}
 
 	public static String userInput(int rowNumber, int cellNumber) throws IOException {
-		File f = new File("C:\\Users\\ELCOT\\eclipse-workspace\\SeleniumMven\\testData\\testQa.xlsx");
+		File f = new File("D:\\File Operation\\hariharanRepository\\SampleRepository\\testData\\testQa.xlsx");
 
 		FileInputStream fin = new FileInputStream(f);
 
@@ -242,7 +244,22 @@ public class BaseClass {
 		s.selectByVisibleText(value);
 
 	}
+	
+	public static  void scrollUp(WebElement ele) {
+		
+		js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].scrollIntoView(true)", ele );
+		
+		
 
+	}
+     
+	public static  void scrollDown(WebElement ele) {
+		
+		js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].scrollIntoView(false)", ele );
+
+	}
 	private void dhina() {
 		System.out.println("Dhinakaran");
 		System.out.println("i am fetch the branch to hariharanbalraj12");

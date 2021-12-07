@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <parameter name="virat" value="Dhina@123"/>
+  <parameter name="password" value="Dhina@123"/>
+  <parameter name="dhoni" value="Dhinakaran"/>
+  <parameter name="dhina" value="Dhina@123"/>
+  <parameter name="karhi" value="Yuvakumar"/>
+  <parameter name="user" value="Hariharan"/>
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="org.testng.Testing">
+        <methods>
+          <include name="tcs3"/>
+          <include name="launchingChrome"/>
+          <include name="startTime"/>
+          <include name="closingChrome"/>
+          <include name="endTime"/>
+        </methods>
+      </class> <!-- org.testng.Testing -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

@@ -37,7 +37,18 @@
     <version>1.3</version>
     <scope>test</scope>
 </dependency>
-
-
+<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+<dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>6.14.3</version>
+    <scope>test</scope>
+</dependency>
+<!-- https://mvnrepository.com/artifact/com.beust/jcommander -->
+<dependency>
+    <groupId>com.beust</groupId>
+    <artifactId>jcommander</artifactId>
+    <version>1.27</version>
+</dependency>
   </dependencies>
 </project>
